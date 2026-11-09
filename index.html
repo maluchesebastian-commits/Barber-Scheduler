@@ -1,0 +1,18 @@
+<!doctype html><html lang="es"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#121a2a"><meta name="description" content="Barbería QR: citas, fidelización y control de cortes">
+<title>BARBER SCHEDULER | Gestión y fidelización</title>
+<link rel="icon" type="image/png" href="assets/barber-scheduler-logo.png">
+<link rel="stylesheet" href="styles.css">
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/dist/umd/supabase.min.js" defer></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/qrcodejs/1.0.0/qrcode.min.js" defer></script>
+<script src="https://unpkg.com/html5-qrcode@2.3.8/html5-qrcode.min.js" defer></script>
+<script src="config.js" defer></script><script src="app.js" defer></script>
+</head><body>
+<header class="topbar"><a href="#" class="brand"><img class="brand-logo" src="assets/barber-scheduler-logo.png" alt="Logo Barber Scheduler"><span>BARBER <b>SCHEDULER</b><small>CITAS Y FIDELIZACIÓN</small></span></a><div class="topright"><span id="who"></span><button id="logout" class="btn ghost hidden">Cerrar sesión</button></div></header>
+<main class="container">
+<section id="setup" class="panel hidden"><h2>Configuración pendiente</h2><p>Abre <code>config.js</code> y coloca la URL y la clave pública del proyecto nuevo de Supabase. Consulta <code>GUIA_INSTALACION.md</code>.</p></section>
+<section id="auth" class="auth-layout hidden"><div class="hero"><img class="hero-logo" src="assets/barber-scheduler-logo.png" alt="Barber Scheduler"><div class="eyebrow">BARBER SCHEDULER · BARBERÍA DIGITAL</div><h1>Tu estilo tiene <em>recompensa.</em></h1><p>Agenda tu cita, elige tu barbero y acumula cortes. Después de 9 cortes pagados, ¡el décimo va por nuestra cuenta!</p><div class="hero-points"><span>✂ Agenda digital</span><span>▦ QR personal</span><span>★ 10.º corte gratis</span></div></div><div class="panel auth-card"><div class="tabs"><button id="tabLogin" class="tab active">Ingresar</button><button id="tabRegister" class="tab">Registrarme</button></div><form id="loginForm"><label>Correo electrónico<input id="loginEmail" type="email" required autocomplete="email"></label><label>Contraseña<input id="loginPass" type="password" required autocomplete="current-password"></label><button class="btn primary full">Ingresar</button></form><form id="registerForm" class="hidden"><label>Nombre completo<input id="regName" required maxlength="120" autocomplete="name"></label><label>Teléfono<input id="regPhone" type="tel" maxlength="30" autocomplete="tel"></label><label>Correo electrónico<input id="regEmail" type="email" required autocomplete="email"></label><label>Contraseña (mínimo 6 caracteres)<input id="regPass" type="password" minlength="6" required autocomplete="new-password"></label><button class="btn primary full">Crear cuenta</button><p class="hint">Si la confirmación por correo está habilitada, revisa tu bandeja de entrada.</p></form></div></section>
+<section id="dashboard" class="hidden"><div class="heading"><div><div class="eyebrow">PANEL DE CONTROL</div><h1 id="welcome">Bienvenido</h1><p id="subtitle"></p></div><span class="role-pill" id="rolePill"></span></div><nav id="nav" class="nav"></nav><div id="view" class="view"></div></section>
+</main><div id="toast" class="toast hidden" role="status"></div><footer>BARBER SCHEDULER · Sistema de fidelización y agenda · MVP</footer>
+</body></html>
